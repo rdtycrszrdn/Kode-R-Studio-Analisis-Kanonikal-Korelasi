@@ -1,0 +1,26 @@
+---
+title: "Analisis Kanonikal Korelasi"
+author: "Arditya Criszardin"
+date: "2023-05-01"
+output: html_document
+---
+
+```{r}
+# Memasang paket "CCA" jika belum terpasang
+# install.packages("CCA")
+
+# Memuat data
+my_data <- read.csv("my_data.csv")
+
+# Melakukan Analisis Kanonikal Korelasi dengan menggunakan paket "CCA"
+library(CCA)
+my_cc <- cc(my_data[, 1:5], my_data[, 6:10])
+
+# Menampilkan hasil Analisis Kanonikal Korelasi
+my_cc
+
+# Plot hasil Analisis Kanonikal Korelasi
+biplot(my_cc)
+
+```
+
